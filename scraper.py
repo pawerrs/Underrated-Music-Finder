@@ -9,12 +9,8 @@ def scrape(url, phrase):
 
     page_soup = soup(html, "html.parser")
 
-    next_url = page_soup.find_all('div', {'id':'columns'})
-
     if(comments.find_comments(url, phrase)):
         title = (page_soup.find_all("h1", {"class":"watch-title-container"})[0].text).strip()
-    else:
-        scrape
 
     return url,title
 
